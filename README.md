@@ -24,6 +24,10 @@
 - Diferença entre debugElemententre e nativeElement
 
 # Module 4
+- **ngOnChanges** are called only via template component
 - **ngOnChanges** is not called by the *fixture.detectChanges()*, are necessary to call manually 
 
+- Os cuidados com ngOnChanges
+- Diferentes abordagens para testar ngOnChanges
+- Criar SimpleChanges programaticamente
 
