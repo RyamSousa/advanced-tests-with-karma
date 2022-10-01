@@ -23,4 +23,7 @@
 - Teste de diretiva
 - Diferença entre debugElemententre e nativeElement
 
+# Module 4
+- **ngOnChanges** is not called by the *fixture.detectChanges()*, are necessary to call manually 
+
 
