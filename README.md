@@ -7,4 +7,20 @@
 - **fakeAsync** and **tick** are used together to control the execution time
 - Tests that make DOM integration are slower
 
+- O papel da função fakeAsync
+- Controle de tempo com a função tick
+- Teste de integração com o DOM
+- Teste de atributos
+- Testando a acessibilidade
+
+# Module 3
+- **fixture.debugElement.nativeElement** provide some options used for angular that are different the only
+    **fixture.nativeElement**, for example *fixture.debugElement.query()* 
+
+- Simulação de cliques
+- Emissão de eventos de UI
+- Combinando dois eventos em um através de diretiva
+- Teste de diretiva
+- Diferença entre debugElemententre e nativeElement
+
 
