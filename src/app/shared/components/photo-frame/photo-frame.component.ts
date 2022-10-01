@@ -10,7 +10,7 @@ import { debounceTime, takeUntil } from "rxjs/operators";
 export class PhotoFrameComponent implements OnInit, OnDestroy {
 	@Input() description: string;
 	@Input() src: string;
-	@Input() likes: string;
+	@Input() likes = 0;
 	@Output() public liked: EventEmitter<void> = new EventEmitter();
 	private debounceSubject: Subject<void> = new Subject();
 	private unsubscribe: Subject<void> = new Subject();
