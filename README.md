@@ -31,3 +31,15 @@
 - Diferentes abordagens para testar ngOnChanges
 - Criar SimpleChanges programaticamente
 
+# Module 5
+- **TestBed.inject** is used to inject any service that exist in modules hierachy of your component
+- **spyOn** has very usages for mocking, include mock component properties  behavior and services return
+- **HttpClientModule** When used in place of the *HttpClientModule*, it'll provide a special *HttpClient* instance that can be controlled in our tests.
+- **HttpTestingController** Controller to be injected into tests, that allows for mocking and flushing of requests.
+
+- Testes de componentes com escopo de página
+- Spy com resposta programada
+- Injeção de serviços em nossos testes
+- Testes de serviços que acessam API's com HttpClientTestingModule
+- Uso dos mock providers
+

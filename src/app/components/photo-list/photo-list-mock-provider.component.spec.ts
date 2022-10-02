@@ -1,9 +1,8 @@
 import { HttpClientModule } from "@angular/common/http";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { of } from "rxjs";
+import { PhotoBoardMockService } from "src/app/shared/components/photo-board/services/photo-board-mock.service";
 import { PhotoBoardService } from "src/app/shared/components/photo-board/services/photo-board.service";
-import { buildPhotolist } from "src/app/shared/components/photo-board/test/build-photos-list";
-
 import { PhotoListComponent } from "./photo-list.component";
 import { PhotoListModule } from "./photo-list.module";
 
@@ -15,6 +14,12 @@ describe("PhotoListComponent", () => {
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
 			imports: [PhotoListModule, HttpClientModule],
+			providers: [
+				{
+					provide: PhotoBoardService,
+					useClass: PhotoBoardMockService,
+				},
+			],
 		}).compileComponents();
 
 		fixture = TestBed.createComponent(PhotoListComponent);
@@ -22,13 +27,7 @@ describe("PhotoListComponent", () => {
 		service = TestBed.inject(PhotoBoardService);
 	});
 
-	it("Should create component", () => {
-		expect(component).toBeTruthy();
-	});
-
 	it("(D) Should display board when data arrives", () => {
-		const photos = buildPhotolist();
-		spyOn(service, "getPhotos").and.returnValue(of(photos));
 		fixture.detectChanges();
 
 		const board = fixture.nativeElement.querySelector("app-photo-board");
@@ -36,16 +35,5 @@ describe("PhotoListComponent", () => {
 
 		expect(board).withContext("Should display board").not.toBeNull();
 		expect(loader).withContext("Should not display loader").toBeNull();
-	});
-
-	it("(D) Should display loader while waiting for data", () => {
-		spyOn(service, "getPhotos").and.returnValue(null);
-		fixture.detectChanges();
-
-		const board = fixture.nativeElement.querySelector("app-photo-board");
-		const loader = fixture.nativeElement.querySelector(".loader");
-
-		expect(board).withContext("Should not display board").toBeNull();
-		expect(loader).withContext("Should display loader").not.toBeNull();
 	});
 });

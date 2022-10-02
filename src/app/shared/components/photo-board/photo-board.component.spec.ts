@@ -4,19 +4,7 @@ import { SimpleChange, SimpleChanges } from "@angular/core";
 import { Photo } from "./interfaces/photo";
 import { PhotoBoardComponent } from "./photo-board.component";
 import { PhotoBoardModule } from "./photo-board.module";
-
-const buildPhotolist = () => {
-	const photos: Photo[] = [];
-
-	for (let i = 0; i < 8; i++) {
-		photos.push({
-			id: i + 1,
-			url: `someUrl + ${i}`,
-			description: `Description ${i}`,
-		});
-	}
-	return photos;
-};
+import { buildPhotolist } from "./test/build-photos-list";
 
 describe(PhotoBoardComponent.name, () => {
 	let fixture: ComponentFixture<PhotoBoardComponent>;
